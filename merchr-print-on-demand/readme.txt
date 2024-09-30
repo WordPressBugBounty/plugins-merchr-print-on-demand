@@ -3,7 +3,7 @@ Contributors: Merchr
 Tags: personalisation, personalised merchandise, personalised products, merchandise, merchr, print on demand, print-on-demand
 Requires at least: 5.0
 Tested up to: 6.6.2
-Stable tag: 1.1.28
+Stable tag: 1.1.29
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -118,6 +118,9 @@ After adding a card, navigate to Payment > Payment Settings where you can ensure
 8. Let your site visitors add their own name. 
 
 == Changelog ==
+
+= 1.1.29 =
+* Minor update.
 
 = 1.1.28 =
 * Small fixes to frontend personaliser.
@@ -255,6 +258,9 @@ After adding a card, navigate to Payment > Payment Settings where you can ensure
 * Initial Merchr Plug-in release.
 
 == Upgrade Notice ==
+
+= 1.1.29 =
+* Minor update.
 
 = 1.1.28 =
 * Small fixes to frontend personaliser.

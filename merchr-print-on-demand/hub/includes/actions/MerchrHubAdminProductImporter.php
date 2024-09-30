@@ -33,6 +33,7 @@ class MerchrHubAdminProductImporter extends MerchrHubActions
     protected $import_limit; // @var int
     protected $store_base_currency; // @var string
     protected $store_base_country; // @var string
+    protected $store_products; // @var array
     
 	/**
 	 * Initialize the class and set its properties.

@@ -1,13 +1,13 @@
 <?php
 /**
  * @link              https://merchr.com
- * @since             1.1.28
+ * @since             1.1.29
  * @package           Merchr
  *
  * @wordpress-plugin
  * Plugin Name:       Merchr Print on Demand
  * Description:       Merchr Hub Print on Demand and Personalisation Plug-in.
- * Version:           1.1.28
+ * Version:           1.1.29
  * Requires at least: 5.0.0
  * Requires PHP:      7.0.0
  * Author:            Merchr
@@ -23,7 +23,7 @@ if(!defined( 'WPINC')) { die; }
 
 define('MERCHR_PLUGIN_NAME', 'merchr');
 define('MERCHR_PLUGIN_FILENAME', __FILE__);
-define('MERCHR_PLUGIN_VERSION', '1.1.28');
+define('MERCHR_PLUGIN_VERSION', '1.1.29');
 define('MERCHR_PLUGIN_DATABASE_VERSION', '1.0.1');
 define('MERCHR_PLUGIN_BASENAME', plugin_basename(__FILE__));
 define('MERCHR_PLUGIN_URL', plugin_dir_url(__FILE__));
