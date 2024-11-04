@@ -517,15 +517,6 @@ class MerchrHubAdminProductImporter extends MerchrHubActions
 				$json_content               = $values->json_content;
 				$design                     = [];
 				
-                /*
-				// Use updated data from import edit form
-				if(isset($products[$id])) {
-					$product_title = $products[$id]['name'];
-					$product_description = $products[$id]['description'];
-					$product_price = floatval($products[$id]['price']);
-				}
-                */
-				
 				// Extract JSON data
 				$extracted_content = json_decode($json_content, true);
 				
@@ -633,9 +624,14 @@ class MerchrHubAdminProductImporter extends MerchrHubActions
                 $product_price = MerchrHubHelpersTax::returnFormattedPrice($product_price, $tax_calcualtaion_value);
                 
                 // Check for currency mismatch and adjust
-                $product_currency = 'GBP';
-                if(isset($extracted_content['product']['currencies'][0]['code'])) {
+                $product_currency = null;
+                if(isset($extracted_content['currency']['code'])) {
+                    $product_currency = $extracted_content['currency']['code'];
+                } else if(isset($extracted_content['product']['currencies'][0]['code'])) {
                     $product_currency = $extracted_content['product']['currencies'][0]['code'];
+                }
+                
+                if($product_currency !== null) {
                     list($product_price, $product_price_converted, $product_price_rate) = MerchrHubHelpersCurrencies::checkAndConvertCurrency(
                         $currencies, 
                         $this->store_base_currency, 

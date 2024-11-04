@@ -300,9 +300,14 @@ class MerchrHubAdminProductUpdater extends MerchrHubAdminProductImporter
                         $product_price = MerchrHubHelpersTax::returnFormattedPrice($selling_price, $tax_calcualtaion_value);
                         
                         // Check for currency mismatch and adjust
-                        $product_currency = 'GBP';
-                        if(isset($data['product']['currencies'][0]['code'])) {
+                        $product_currency = null;
+                        if(isset($data['currency']['code'])) {
+                            $product_currency = $data['currency']['code'];
+                        } else if(isset($data['product']['currencies'][0]['code'])) {
                             $product_currency = $data['product']['currencies'][0]['code'];
+                        }
+                        
+                        if($product_currency !== null) {
                             list($product_price, $product_price_converted, $product_price_rate) = MerchrHubHelpersCurrencies::checkAndConvertCurrency(
                                 $currencies, 
                                 $this->store_base_currency, 
